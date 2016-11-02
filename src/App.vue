@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
 export default {
   data () {
     return {
@@ -27,6 +28,7 @@ export default {
 </script>
 
 <style>
+@import './theme-default/src/index.css';
 body {
   font-family: Helvetica, sans-serif;
 }

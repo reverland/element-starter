@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css'
+        loader: 'style!css!postcss-loader'
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
@@ -38,6 +38,50 @@ module.exports = {
         }
       }
     ]
+  },
+  postcss: function() {
+    return [require('postcss-salad')({
+      browser: ['ie > 9', 'last 2 version'],
+      features: {
+        'bem': {
+          'shortcuts': {
+            'component': 'b',
+            'modifier': 'm',
+            'descendent': 'e'
+          },
+          'separators': {
+            'descendent': '__',
+            'modifier': '--'
+          }
+        }
+      }
+    })]
+  },
+  vue: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loader: 'style!css!postcss-loader'
+      }
+    ],
+    postcss: function() {
+      return [require('postcss-salad')({
+        browser: ['ie > 9', 'last 2 version'],
+        features: {
+          'bem': {
+            'shortcuts': {
+              'component': 'b',
+              'modifier': 'm',
+              'descendent': 'e'
+            },
+            'separators': {
+              'descendent': '__',
+              'modifier': '--'
+            }
+          }
+        }
+      })]
+    },
   },
   devServer: {
     historyApiFallback: true,

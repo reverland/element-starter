@@ -18,6 +18,8 @@
     "cross-env": "^1.0.6",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
+    "postcss-loader": "^1.1.0",
+    "postcss-salad": "^1.0.5",
     "style-loader": "^0.13.1",
     "vue-loader": "^9.5.1",
     "webpack": "2.1.0-beta.22",
