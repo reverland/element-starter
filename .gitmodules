@@ -1,0 +1,3 @@
+[submodule "theme-default"]
+        path = src/theme-default
+        url = git@github.com:reverland/theme-default.git
